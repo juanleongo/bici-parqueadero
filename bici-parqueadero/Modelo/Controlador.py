@@ -6,9 +6,7 @@ ESTUDIANTES=[]
 
 def menu():
 	print("Menu Principal")
-	print("3. agregar beneficiario")
-	print("4. buscar beneficiario")
-	print("5. borrar beneficiario")
+	print("1. resgistro estudiante")
 	print("6. salir")
 
 def agregar():
@@ -20,6 +18,19 @@ def agregar():
 	codigo_estudiante=input("ingrese su codigo:")
 	estudiante = Estudiante(nombre_e,apellido_e,edad_e,tipo_de_documento,numero_de_documento,codigo_estudiante) 
 	ESTUDIANTES.append(estudiante)
+	#datos.write(estudiante)
+
+def buscar_estudiante(codigo,n_documento):
+	for alumno in ESTUDIANTES:
+		if alumno.codigo==codigo and alumno.numero_documento==n_documento:
+			print("ingreso con exito")
+		else:
+			print("no se encontro")
+
+def login(n_documento,codigo):
+	usuario = numero_documento
+	password=codigo
+	buscar_estudiante(n_documento,codigo)	
 
 def mostar_lista():
 	for i in ESTUDIANTES:
